@@ -14,9 +14,8 @@ Profitez de l'expérience, n'hésitez pas à relire et à faire des pauses régu
 
 
 
-Indices and tables
-==================
+Pages d'aide
+============
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
