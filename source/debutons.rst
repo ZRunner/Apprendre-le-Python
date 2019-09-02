@@ -6,9 +6,9 @@ Nous voici arrivé au moment tant attendu de la création de notre premier algor
 
 Avant toute chose, il est nécessaire de préciser deux trois points sur Python :
 
-- Le langage est sensible à la casse : la variable ``Test`` est différente de la variable ``test`` ou même ``TEST``! De même, ``True`` existe mais pas ``true``.
+- Ce langage est `sensible à la casse <https://fr.wikipedia.org/wiki/Sensibilit%C3%A9_%C3%A0_la_casse>`_ : la variable ``Test`` est différente de la variable ``test`` ou même ``TEST``! De même, ``True`` existe mais pas ``true``.
 - Un appel de fonction doit toujours se faire avec des parenthèses, même si aucun argument n'est donné. Sinon vous renvoyez la fonction en elle-même, en tant que variable, sans l'appeler.
-- L'indentation est **extrêmement** importante en Python. Là où certains langages pourraient se faire en une seule ligne en abusant des points-virgules ou des accolades, la syntaxe de Python est majoritairement définie par l'indentation. Vous *devez* indenter votre code lorsque vous êtes dans un bloc, sinon Python ne pourra même pas lire votre programme !
+- `L'indentation <https://fr.wikipedia.org/wiki/Style_d%27indentation>`_ est **extrêmement** importante en Python. Là où certains langages pourraient se faire en une seule ligne en abusant des points-virgules ou des accolades, la syntaxe de Python est majoritairement définie par l'indentation. Vous *devez* indenter votre code lorsque vous êtes dans un bloc, sinon Python ne pourra même pas lire votre programme !
 
 Ces recommandations faites, je vous propose d'entammer l'apprentissage des variables. C'est parti !
 
