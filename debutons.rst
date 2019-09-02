@@ -45,7 +45,7 @@ Lancer l'interpréteur Python
 Il est possible de lancer Python depuis votre terminal, et ce très simplement : entrez uniquement la commande ``python``. Notez que parfois cette commande peut ouvrir la version 2.7 de Python, auquel cas il faut utiliser la commande ``python3`` à la place.  
 Vous obtiendrez alors quelque chose de semblable à ce qui suit : 
 
-.. code-block:: bash
+.. code-block:: none
   
   $ python3
   Python 3.7.4 (default, Jul  9 2019, 18:13:23)
