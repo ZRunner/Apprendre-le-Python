@@ -1,81 +1,43 @@
-Débutons le Python
-==================
+==============
+Débutons enfin
+==============
+
+Nous voici arrivé au moment tant attendu de la création de notre premier algorithme. Nous allons ici explorer le monde des variables et des fonctions, qui sont à la base de la Programmation Orientée Object (POO).
+
 
 ----------------------
-Installation de Python
+Les types de variables
 ----------------------
 
-Le plus simple est évidemment de l'installer depuis le site web officiel, cf. https://www.python.org/downloads. Néanmoins cela le rendra plus compliqué à mettre à jour, c'est pourquoi si vous connaissez un peu le terminal (ou 'console' sur Windows), il est préférable de l'installer depuis celui-ci.
+Pour ceux qui sont totalementd débutants à la programmation, il me semble nécessaire de définir ce qu'est une variable. Je dirais donc qu'il s'agit d'une boîte à chaussure, contenant une étiquette, un code-barre et un objet à l'intérieur. L'étiquette comporte le nom de la variable, qu'on utilise dans l'agorithme ; le code-barre indique à l'ordinateur où est situé sa valeur dans la mémoire vive de la machine ; et l'objet à l'intérieur est la valeur de la variable (un nombre, une chaine de caractère, une liste...).
 
-Pour MacOS
-----------
+Il existe plusieurs types de variables en Python, en fait même une infinité puisqu'il est possible de définir son propre type (aussi appelé 'classe'). Nous ne verrons pour le moment que les plus communs.
 
-Personnellement, je vous conseille de passer par le célèbre programme 'brew', qui permet d'installer et de mettre à jour des 'paquets' (programmes, applications etc) très facilement sur Mac. Vous trouverez son installation via leur site web, https://brew.sh/index_fr.
-
-Une fois brew installé, il suffit de rentrer dans le terminal ``brew install python``, et le téléchargement de la dernière version de Python 3 devrait se faire (à l'heure où j'écris ces lignes, il s'agit de Python 3.7.4).  
-Pour la suite, un simple ``brew upgrade python`` permettra de maintenir Python à jour sur votre Mac.
-
-Pour Linux
-----------
-
-Je ne connais pas le détail de toutes les distributions Linux, mais pour les environnements Unix/Debian par exemple, il existe la commande ``apt install`` (ou parfois ``apt-get install``) qui permet d'installer un paquet, comme le fait brew sur Mac. Cette commande est native au système, vous ne devriez pas avoir à la télécharger.
-
-La commande pour installer python sera donc ``apt install python3``, qui vous installera la version de Python ayant été certifiée pour votre OS. Attention, elle n'est généralement pas la dernière version de Python, et peut donc présenter des incompatibilités avec ce guide. Pour installer une version précise, il faudra donc la télécharger et l'installer soi-même depuis le serveur officiel, comme suit : (n'oubliez pas de changer les numéros de version si besoin)
-
-.. code-block:: bash
-
-  wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
-  tar xvf Python-3.7.3.tgz
-  cd Python-3.7.4
-  ./configure --enable-optimizations --enable-shared
-  make -j8
-  sudo make altinstall
-
-
-Pour Windows
-------------
-
-Je ne connais pas la procédure d'installation spécifique à Windows, mais je sais par expérience qu'elle peut être assez douloureuse. Je conseille donc d'utiliser le téléchargement depuis le site officiel, c'est la méthode la plus sûre pour le moment.
-
-
-----------------------------
-Lancer l'interpréteur Python
-----------------------------
-
-Il est possible de lancer Python depuis votre terminal, et ce très simplement : entrez uniquement la commande ``python``. Notez que parfois cette commande peut ouvrir la version 2.7 de Python, auquel cas il faut utiliser la commande ``python3`` à la place.  
-Vous obtiendrez alors quelque chose de semblable à ce qui suit : 
-
-.. code-block:: none
-  
-  $ python3
-  Python 3.7.4 (default, Jul  9 2019, 18:13:23)
-  [Clang 10.0.1 (clang-1001.0.46.4)] on darwin
-  Type "help", "copyright", "credits" or "license" for more information.
-  >>>
-
-Les trois chevrons ('>>>') indiquent que le programme attend de vous une instruction à exécuter. Vous pouvez alors écrire votre toute première instruction Python, par exemple ``print("Hello world")``, qui écrira dans le terminal la fameuse phrase 'Hello world'. Du même coup vous découvrez la *fonction* ``print``, qui permet d'afficher du texte ou d'autres choses dans le terminal. Nous reviendrons sur les chaînes de caractères (ou 'string') plus tard.
-
-Pour quitter ce mode, vous devrez utiliser la fonction ``exit()``.
-
-
--------------------------------------
-Quelques notes sur la commande python
--------------------------------------
-
-La commande ``python`` ne vous permet pas seulement de lancer l'IDE, mais aussi de lancer un fichier écrit en Python (nous verrons cela plus tard), d'installer un paquet spécifique, de connaître la version installée de Python, etc.  
-Quelques exemples : 
-
-- ``python -V`` vous donnera la version utilisée par la commande
-- ``python start.py`` lancera le ficher nommé 'start.py' installé dans le répertoire courant
-- ``python ~/tests/start.py`` lancera le fichier 'start.py' installé dans le dossier 'tests' de votre répertoire utilisateur
-- ``python -m pip install aiohttp`` installe la bibliothèque 'aiohttp', que vous pourrez utiliser dans votre code. Notez qu'il existe généralement l'alias `pip` pour vous éviter de taper `python -m`
+1. Les entiers (``int``) sont.... des nombres entiers, positifs ou négatifs. Que ça soit -2, 7 ou 1e99 (1x10^99), tous sont stockés sous le même type *integer*. Il est évidemment possible de les additionner ``+``, soustraires ``-``, multiplier ``*``, diviser ``/`` etc. ensembles, en plus d'autres opérations plus complexes (division entière ``//``, modulo ``%``...)
+2. Les chaines de caractères (``str``), tout aussi simple à deviner, sont des sortes de listes de caractères. Définies entre guillemets ``"abc"`` ou simples apostrophes ``'def'``, elles peuvent contenir un grand nombre de caractères, ou aussi être vides. Vous pouvez facilement les concaténer avec le symbole ``+``, et accéder à un caractère particulier de la même manière que pour une liste. Elles ont aussi leurs propres méthodes que nous verrons plus tard.
+3. Les réels (``float``) sont des nombres ayant une partie décimale, aussi bien positifs que négatifs. Ils peuvent par exemple être issus d'une division de deux entiers, comme 5/2. Tout comme les entiers, la plupart des opérations mathématiques communes leurs sont appliquables. Contrairement à certains autres langages, les *double* n'existent pas, et les *float* représentent une plus grande portion de nombres.
+4. Les listes (``list``) sont parfois appelés tableaux ailleurs. Il s'agit d'une liste d'éléments ordonnés, possédant des méthodes pour insérer, supprimer ou accéder à une valeur. Une liste peut contenir plusieurs types d'éléments différents, et n'a pas de taille fixe, ce qui la rend très modulable. De plus vous pouvez concaténer deux listes ensemble avec l'opérateur ``+``. Attention à ne pas confondre avec les ``tuple``, qui eux sont des listes ne pouvant pas être modifiées après création.
 
 
 
 ----------------------
-Enregistrer un fichier
+Utiliser des variables
 ----------------------
 
-Enregistrer un algorithme Python dans un fichier est extrêmement simple : il suffit de nommer le fichier avec l'extension '.py', pour que votre ordinateur sache qu'il s'agit d'un fichier Python. Et c'est tout.
+Maintenant que vous savez la base sur les variables, il est temps d'apprendre à les utiliser. Pour cela rien de plus simple, il suffit de suivre la syntaxe ``nom = valeur``. Par exemple le code ``test = 12`` va créer une variable nommée 'test' de type 'integer' avec pour valeur '12'. Et c'est tout !
 
-Pour le lancer vous devrez soit utiliser un éditeur de code capable de le faire, comme l'`IDLE officielle <https://docs.python.org/fr/3/library/idle.html>`_ ou l'application `Visual Studio Code <https://code.visualstudio.com/>`_ (cf la `page sur VSCode <logiciels.html#visual-studio-code>`_), soit utiliser directement la commande ``python`` comme vu juste au-dessus.
+Un autre truc cool avec Python, c'est que les variables n'ont pas de type assigné : si juste après vous mettez ``test = ['a','b','c']``, dans ce cas la variable test précédemment créée va devenir une liste avec trois chaines de caractères, et perdre sa valeur précédente. Simple, non ?
+
+Il est aussi possible de convertir certains types de variables en d'autres types, par exemple ``int('12')`` retournera l'entier 12, et ``list("abc")`` retournera la liste ``['a','b','c']``. Si vous voulez que votre variable ``test`` ayant pour valeur l'entier 12 soit d'un coup une chaine de caratère de la même valeur, il suffit de taper ``test = str(test)``, et le tour est joué. Je vous laisse réfléchir à la puissance de ce que cela implique.
+
+Maintenant jouons à un petit jeu. Essayez de deviner la valeur et le type de la variable `c` à la fin de l'algorithme ci-dessous.
+
+.. code-block:: python
+
+    a = 12
+    b = -9
+    c = a + b
+    c = "b" + str(c)
+
+Vous avez trouvé ? Il s'agit de la chaine de caractère 'b3' : à la troisième ligne c prend la valeur ``12 + (-9)`` soit 3, et juste après on lui dit de prendre le caractère ``"b"`` à laquelle on accole ``"3"``.  
+Un peu tordu ? Alors n'hésitez pas à relire autant qu'il le faut, car ce n'est que le début.
