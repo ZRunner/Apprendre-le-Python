@@ -78,4 +78,4 @@ Enregistrer un fichier
 
 Enregistrer un algorithme Python dans un fichier est extrêmement simple : il suffit de nommer le fichier avec l'extension '.py', pour que votre ordinateur sache qu'il s'agit d'un fichier Python. Et c'est tout.
 
-Pour le lancer vous devrez soit utiliser un éditeur de code capable de le faire, comme l'`IDLE officielle <https://docs.python.org/fr/3/library/idle.html>`_ ou l'application `Visual Studio Code <https://code.visualstudio.com/>`_ (cf la page sur VSCode), soit utiliser directement la commande ``python`` comme vu juste au-dessus.
+Pour le lancer vous devrez soit utiliser un éditeur de code capable de le faire, comme l'`IDLE officielle <https://docs.python.org/fr/3/library/idle.html>`_ ou l'application `Visual Studio Code <https://code.visualstudio.com/>`_ (cf la `page sur VSCode <logiciels.html#visual-studio-code>`_), soit utiliser directement la commande ``python`` comme vu juste au-dessus.
