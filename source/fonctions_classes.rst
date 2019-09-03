@@ -76,7 +76,7 @@ Exemple :
         print("n est de valeur",n)
         print("Vous avez commandé 1",item,"avec",parts,"parts")
 
-Si cette fonction est appelée avec un seul argument, Python va se plaindre qu'il manque des arguments, et c'est logique. Mais la fourberie est que si vous vous contentez de donner trois arguments, comme par exemple ``3,8,'pizza'``, vous vous trouverez face à une erreur :py:error:`TypeError` : "TypeError: foo() takes 1 positional argument but 3 were given". En effet la fonction ne demande qu'un seul argument positionnel alors que vous lui en donnez 3.
+Si cette fonction est appelée avec un seul argument, Python va se plaindre qu'il manque des arguments, et c'est logique. Mais la fourberie est que si vous vous contentez de donner trois arguments, comme par exemple ``3,8,'pizza'``, vous vous trouverez face à une erreur :py:exc:`TypeError` : "TypeError: foo() takes 1 positional argument but 3 were given". En effet la fonction ne demande qu'un seul argument positionnel alors que vous lui en donnez 3.
 
 La seule et unique manière d'appeler cette fonction est donc ``foo(3,parts=8,item='pizza')``.
 
