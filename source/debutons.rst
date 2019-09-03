@@ -21,10 +21,11 @@ Pour ceux qui sont totalement débutants à la programmation, il me semble néce
 
 Il existe plusieurs types de variables en Python, en fait même une infinité puisqu'il est possible de définir son propre type (aussi appelé 'classe'). Nous ne verrons pour le moment que les plus communs.
 
-1. Les entiers (``int``) sont.... des nombres entiers, positifs ou négatifs. Que ça soit -2, 7 ou 1e99 (1x10^99), tous sont stockés sous le même type *integer*. Il est évidemment possible de les additionner ``+``, soustraires ``-``, multiplier ``*``, diviser ``/`` etc. ensembles, en plus d'autres opérations plus complexes (division entière ``//``, modulo ``%``...)
-2. Les chaines de caractères (``str``), tout aussi simple à deviner, sont des sortes de listes de caractères. Définies entre guillemets ``"abc"`` ou simples apostrophes ``'def'``, elles peuvent contenir un grand nombre de caractères, ou aussi être vides. Vous pouvez facilement les concaténer avec le symbole ``+``, et accéder à un caractère particulier de la même manière que pour une liste. Elles ont aussi leurs propres méthodes que nous verrons plus tard.
-3. Les réels (``float``) sont des nombres ayant une partie décimale, aussi bien positifs que négatifs. Ils peuvent par exemple être issus d'une division de deux entiers, comme 5/2. Tout comme les entiers, la plupart des opérations mathématiques communes leurs sont appliquables. Contrairement à certains autres langages, les *double* n'existent pas, et les *float* représentent une plus grande portion de nombres.
-4. Les listes (``list``) sont parfois appelés tableaux ailleurs. Il s'agit d'une liste d'éléments ordonnés, possédant des méthodes pour insérer, supprimer ou accéder à une valeur. Une liste peut contenir plusieurs types d'éléments différents, et n'a pas de taille fixe, ce qui la rend très modulable. De plus vous pouvez concaténer deux listes ensemble avec l'opérateur ``+``. Attention à ne pas confondre avec les ``tuple``, qui eux sont des listes ne pouvant pas être modifiées après création.
+1. Les entiers (:py:class:`int`) sont.... des nombres entiers, positifs ou négatifs. Que ça soit -2, 7 ou 1e99 (1x10^99), tous sont stockés sous le même type *integer*. Il est évidemment possible de les additionner ``+``, soustraires ``-``, multiplier ``*``, diviser ``/`` etc. ensembles, en plus d'autres opérations plus complexes (division entière ``//``, modulo ``%``...)
+2. Les chaines de caractères (:py:class:`str`), tout aussi simple à deviner, sont des sortes de listes de caractères. Définies entre guillemets ``"abc"`` ou simples apostrophes ``'def'``, elles peuvent contenir un grand nombre de caractères, ou aussi être vides. Vous pouvez facilement les concaténer avec le symbole ``+``, et accéder à un caractère particulier de la même manière que pour une liste. Elles ont aussi leurs propres méthodes que nous verrons plus tard.
+3. Les réels (:py:class:`float`) sont des nombres ayant une partie décimale, aussi bien positifs que négatifs. Ils peuvent par exemple être issus d'une division de deux entiers, comme 5/2. Tout comme les entiers, la plupart des opérations mathématiques communes leurs sont appliquables. Contrairement à certains autres langages, les *double* n'existent pas, et les *float* représentent une plus grande portion de nombres.
+4. Les listes (:py:class:`list`) sont parfois appelés tableaux ailleurs. Il s'agit d'une liste d'éléments ordonnés, possédant des méthodes pour insérer, supprimer ou accéder à une valeur. Une liste peut contenir plusieurs types d'éléments différents, et n'a pas de taille fixe, ce qui la rend très modulable. De plus vous pouvez concaténer deux listes ensemble avec l'opérateur ``+``. Attention à ne pas confondre avec les :py:class:`tuple`, qui eux sont des listes ne pouvant pas être modifiées après création.
+5. Les booléens (:py:class:`bool`) peuvent avoir seulement deux valeurs différentes : :py:data:`True` ou :py:data:`False`. Ils représentent un conditionnel, et peuvent être utilisé lorsque la syntaxe nécessite une condition. Simple à comprendre, non ?
 
 
 
@@ -65,9 +66,9 @@ La boucle FOR
     for <variable> in <itérateur>:
         # some code
 
-La boucle ``for`` permet d'exécuter un bloc de code un certain nombre de fois, avec une variable prenant à chaque tour une nouvelle valeur contenue dans un itérateur (une liste par exemple). C'est à dire que si j'utilise par exemple ``for jour in ['lundi','mardi','mercredi']``, le bloc de code va s'exécuter trois fois, et la variable ``jour`` prendra tour à tour les valeurs 'lundi', 'mardi' et 'mercredi'. 
+La boucle `for <https://docs.python.org/fr/3/tutorial/controlflow.html#for-statements>`_ permet d'exécuter un bloc de code un certain nombre de fois, avec une variable prenant à chaque tour une nouvelle valeur contenue dans un itérateur (une liste par exemple). C'est à dire que si j'utilise par exemple ``for jour in ['lundi','mardi','mercredi']``, le bloc de code va s'exécuter trois fois, et la variable ``jour`` prendra tour à tour les valeurs 'lundi', 'mardi' et 'mercredi'. 
 
-Si le but n'est que d'exécuter la boucle un nombre précis de fois, la fonction ``range(i)`` permet de générer un itérateur allant de 0 à i-1. D'autres arguments sont disponibles pour cette fonction, comme nous le verrons plus tard. Par exemple pour avoir une boucle avec un incrément ``i`` s'incrémentant trois fois, il faudra ``for i in range(3)``.
+Si le but n'est que d'exécuter la boucle un nombre précis de fois, la classe :py:class:`range` permet de générer un itérateur allant de 0 à i-1. D'autres arguments sont disponibles pour cette fonction, comme nous le verrons plus tard. Par exemple pour avoir une boucle avec un incrément ``i`` s'incrémentant trois fois, il faudra ``for i in range(3)``.
 
 
 La boucle WHILE
@@ -91,7 +92,7 @@ Les conditions (IF/ELSE)
     else:
         # some other code
 
-Le mot-clé IF, traduit par "Si" en français, permet d'exprimer une condition : 'Si' la condtion est vraie, alors exécute ce code. Il est *possible* (mais non obligatoire) de le faire suivre d'un bloc ELSE, qui va exécuter du code si la condition est fausse. Très intuitif, non ?
+Le mot-clé `IF <https://docs.python.org/fr/3/tutorial/controlflow.html#if-statements>`_, traduit par "Si" en français, permet d'exprimer une condition : 'Si' la condtion est vraie, alors exécute ce code. Il est *possible* (mais non obligatoire) de le faire suivre d'un bloc ELSE, qui va exécuter du code si la condition est fausse. Très intuitif, non ?
 
 Mais que se passe-t-il si on veut tester la valeur d'une variable, qui peut prendre plusieurs valeurs différentes ? Le premier réflexe serait d'enchaîner les blocs if/else, un peu comme dans cet exemple :
 
@@ -123,7 +124,9 @@ Il est bien évidemment possible de finir avec un bloc ELSE, qui est utilisé po
 Les trucs à utiliser à l'intérieur d'une boucle
 -----------------------------------------------
 
-Deux mots-clés sont important à connaître lorsqu'on manipule les boucles. Il y a tout d'abord ``break``, dont j'ai fait mention un peu plus haut, qui permet d'arrêter immédiament une boucle. Par exemple ces deux boucles sont identiques :
+Deux mots-clés sont important à connaître lorsqu'on manipule les boucles. Si vous voulez un peu de lecture externe, je vous propose la `documentation officielle sur break/continue <https://docs.python.org/fr/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops>`_. 
+
+Il y a tout d'abord ``break``, dont j'ai fait mention un peu plus haut, qui permet d'arrêter immédiament une boucle. Par exemple ces deux boucles sont identiques :
 
 .. code-block:: py
 

@@ -31,7 +31,13 @@ release = '1.0.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.intersphinx',
 ]
+# Add mappings
+intersphinx_mapping = {
+    'python': ('http://docs.python.org/fr/3', None),
+    'discord': ('https://discordpy.readthedocs.io/en/latest', None)
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
