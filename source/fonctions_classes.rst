@@ -80,3 +80,56 @@ Si cette fonction est appelée avec un seul argument, Python va se plaindre qu'i
 
 La seule et unique manière d'appeler cette fonction est donc ``foo(3,parts=8,item='pizza')``.
 
+
+--------------------------------------------------
+Utiliser une liste/un dictionnaire comme arguments
+--------------------------------------------------
+
+Lorsque vous appelez une fonction, il est possible que vous ayez tous vos arguments contenus dans une liste, déjà triée correctement. Dans ce cas vous pouvez directement passer la liste entière, via un argument spécial, sans avoir à donner tous les élément un par un. Voyez cet exemple :
+
+.. code-block:: py
+
+    >>> def foo(a,b,c):
+    ...    "Retourne a+b-c"
+    ...    return a+b-c
+
+    >>> mylist = [1,5,2]
+    >>> foo(*mylist)
+    4
+
+Voyez ? Un simple astérisque, et toute votre liste est dépaquetée.
+
+Vous pouvez faire de même avec un dictionnaire, mais avec deux astérisques. Exemple :
+
+.. code-block:: py
+
+    >>> mydict = {'a':1, 'c':2, 'b':5}
+    >>> foo(**mydict)
+    4
+    # Vous pouvez même combiner avec la méthode classique :
+    >>> mydict = {'a':1,'c':2}
+    >>> foo(b=5,**mydict)
+    4
+
+Notez que vu que les clés d'un dictionnaire ne sont pas triées, l'ordre dans lesquelles vous les créez n'importe pas.
+
+
+-------------------
+Les fonctions lamda
+-------------------
+
+La plupart des développeurs débutants ont peur en voyant des fonctions lambda, aussi appelées fonctions anonymes car elles n'ont pas de nom. En effet leur syntaxe est assez étrange, difficile à décrypter selon certains. Pourtant il s'agit d'un moyen très efficace de déclarer une fonction sur une seule ligne, et qui, lorsqu'il est bien utilisé, peut vous faire gagner beaucoup de temps et de place.
+
+La syntaxe d'une fonction lambda est donc ``lambda arguments : valeur retournée``. Un exempe, si vous voulez retourner x+2, vous ferrez ``lambda x: x+2``. D'un coup ça parrait moins compliqué non ?
+
+Il es aussi possible de le faire avec plusieurs arguments, comme par exemple, si on reprend la fonction foo vue juste au-dessus... ``lambda a,b,c: a+b-c``.
+
+Mais attention, comme vous pouvez l'observer, aucun nom n'est donné à cette fonction. Alors comment l'appeler ? En fait cette syntaxe retourne une fonction, donc un objet. Vous pouvez alors stocker cet objet dans une variable. Reprenons l'exemple plus haut :
+
+.. code-block:: py
+
+    >>> foo = lambda a,b,c : a+b-c
+    >>> foo(1,5,2)
+    4
+
+Et voilà, nous avons économisé une ligne de code.
