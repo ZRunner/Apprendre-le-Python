@@ -114,9 +114,9 @@ Vous pouvez faire de même avec un dictionnaire, mais avec deux astérisques. Ex
 Notez que vu que les clés d'un dictionnaire ne sont pas triées, l'ordre dans lesquelles vous les créez n'importe pas.
 
 
--------------------
-Les fonctions lamda
--------------------
+--------------------
+Les fonctions lambda
+--------------------
 
 La plupart des développeurs débutants ont peur en voyant des fonctions lambda, aussi appelées fonctions anonymes car elles n'ont pas de nom. En effet leur syntaxe est assez étrange, difficile à décrypter selon certains. Pourtant il s'agit d'un moyen très efficace de déclarer une fonction sur une seule ligne, et qui, lorsqu'il est bien utilisé, peut vous faire gagner beaucoup de temps et de place.
 
