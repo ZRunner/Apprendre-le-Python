@@ -57,7 +57,7 @@ Cette bibliothèque fait partie, selon certains sondages, des 10 bibliothèques 
 
 Par exemple pour envoyer une requête 'GET' à l'adresse `https://discordapp.com/api/gateway`, nous utiliserons le code suivant :
 
-.. code-block:: 
+.. code-block:: py
 
     >>> import requests
     >>> answer = requests.get('https://discordapp.com/api/gateway')
