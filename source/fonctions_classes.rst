@@ -18,8 +18,8 @@ Nommer les arguments à l'appel
 
 Lorsque vous appelez une fonction, vous pouvez si vous le souhaitez préciser pour quel argument vous donnez une valeur. En partant de ce principe, il est possible de donner les arguments dans le désordre.
 
-Par exemple avec la fonction définie comme suit : ``def foo(taille:int, nom:str, couleurs:list)``, vous pouvez l'appeler de plusieurs manières différentes : ``nom(3,'voiture', ['bleu','vert'])``, mais aussi ``nom(taille=3, nom='voiture', couleurs=['bleu','vert'])``, ou pourquoi pas ``nom(nom='voiture', couleurs=['bleu','vert'], taille=3)``.   
-Il est aussi possible de mélanger les deux méthodes, dans ce cas les arguments sans noms doivent bien être placés dans l'ordre : ``nom(3, couleurs=['bleu','vert'], nom='voiture')``.
+Par exemple avec la fonction définie comme suit : ``def foo(taille: int, nom: str, couleurs: list)``, vous pouvez l'appeler de plusieurs manières différentes : ``foo(3, 'voiture', ['bleu','vert'])``, mais aussi ``foo(taille=3, nom='voiture', couleurs=['bleu','vert'])``, ou pourquoi pas ``foo(nom='voiture', couleurs=['bleu','vert'], taille=3)``.   
+Il est aussi possible de mélanger les deux méthodes, dans ce cas les arguments sans noms doivent bien être placés dans l'ordre : ``foo(3, couleurs=['bleu','vert'], nom='voiture')``.
 
 Cette technique est particulièrement utile lorsque la fonction accepte des arguments optionnels, comme nous allons le voir dès maintenant.
 
@@ -28,7 +28,7 @@ Cette technique est particulièrement utile lorsque la fonction accepte des argu
 Création d'arguments optionnels
 -------------------------------
 
-Il est possible de créer une fonction ayant des arguments que l'appel n'est *pas obligé* de fournir, ils sont donc optionnels. Par exemple dans la fonction ``route(stop:int,start:int=0)``, l'argument stop est obligatoire, mais l'argument start est optionnel : s'il n'est pas fourni, il prendra la valeur ``0``. Si vous n'en voyez pas l'utilité, attendez un peu de gagner de l'expérience, vous comprendrez vite.
+Il est possible de créer une fonction ayant des arguments que l'appel n'est *pas obligé* de fournir, ils sont donc optionnels. Par exemple dans la fonction ``range(stop: int, start: int=0)``, l'argument stop est obligatoire, mais l'argument start est optionnel : s'il n'est pas fourni, il prendra la valeur ``0``. Si vous n'en voyez pas l'utilité, attendez un peu de gagner de l'expérience, vous comprendrez vite.
 
 
 -------------------
@@ -41,11 +41,11 @@ Regardez cet exemple pour mieux comprendre :
 
 .. code-block:: py
 
-    >>> def foo(n:int,*args):
+    >>> def foo(n: int, *args):
     ...    print("n est de valeur",n)
     ...    print("J'ai aussi reçu comme arguments",args)
     
-    >>> foo(3,8,4,'pizza')
+    >>> foo(3, 8, 4, 'pizza')
     n est de valeur 3
     J'ai aussi reçu comme arguments [8,4,'pizza']
 
@@ -53,11 +53,11 @@ Encore mieux, il est possible de faire une liste indéfinie d'arguments *nommés
 
 .. code-block:: py
 
-    >>> def foo(n:int,**kwargs):
+    >>> def foo(n: int, **kwargs):
     ...    print("n est de valeur",n)
     ...    print("J'ai aussi reçu comme arguments",kwargs)
     
-    >>> foo(3,parts=8,personnes=4,item='pizza')
+    >>> foo(3, parts=8, personnes=4, item='pizza')
     n est de valeur 3
     J'ai aussi reçu comme arguments {'parts': 8, 'personnes': 4, 'item': 'pizza'}
 
@@ -72,13 +72,13 @@ Exemple :
 
 .. code-block:: py
 
-    def foo(n,*,parts,item):
+    def foo(n, *, parts, item):
         print("n est de valeur",n)
         print("Vous avez commandé 1",item,"avec",parts,"parts")
 
-Si cette fonction est appelée avec un seul argument, Python va se plaindre qu'il manque des arguments, et c'est logique. Mais la fourberie est que si vous vous contentez de donner trois arguments, comme par exemple ``3,8,'pizza'``, vous vous trouverez face à une erreur :py:exc:`TypeError` : "TypeError: foo() takes 1 positional argument but 3 were given". En effet la fonction ne demande qu'un seul argument positionnel alors que vous lui en donnez 3.
+Si cette fonction est appelée avec un seul argument, Python va se plaindre qu'il manque des arguments, et c'est logique. Mais la fourberie est que si vous vous contentez de donner trois arguments, comme par exemple ``3, 8, 'pizza'``, vous vous trouverez face à une erreur :py:exc:`TypeError` : "TypeError: foo() takes 1 positional argument but 3 were given". En effet la fonction ne demande qu'un seul argument positionnel alors que vous lui en donnez 3.
 
-La seule et unique manière d'appeler cette fonction est donc ``foo(3,parts=8,item='pizza')``.
+La seule et unique manière d'appeler cette fonction est donc ``foo(3, parts=8, item='pizza')``.
 
 
 --------------------------------------------------
@@ -89,11 +89,11 @@ Lorsque vous appelez une fonction, il est possible que vous ayez tous vos argume
 
 .. code-block:: py
 
-    >>> def foo(a,b,c):
+    >>> def foo(a, b, c):
     ...    "Retourne a+b-c"
     ...    return a+b-c
 
-    >>> mylist = [1,5,2]
+    >>> mylist = [1, 5, 2]
     >>> foo(*mylist)
     4
 
@@ -103,12 +103,12 @@ Vous pouvez faire de même avec un dictionnaire, mais avec deux astérisques. Ex
 
 .. code-block:: py
 
-    >>> mydict = {'a':1, 'c':2, 'b':5}
+    >>> mydict = { 'a': 1, 'c': 2, 'b': 5 }
     >>> foo(**mydict)
     4
     # Vous pouvez même combiner avec la méthode classique :
-    >>> mydict = {'a':1,'c':2}
-    >>> foo(b=5,**mydict)
+    >>> mydict = { 'a': 1, 'c' :2 }
+    >>> foo(b=5, **mydict)
     4
 
 Notez que vu que les clés d'un dictionnaire ne sont pas triées, l'ordre dans lesquelles vous les créez n'importe pas.
@@ -129,7 +129,7 @@ Mais attention, comme vous pouvez l'observer, aucun nom n'est donné à cette fo
 .. code-block:: py
 
     >>> foo = lambda a,b,c : a+b-c
-    >>> foo(1,5,2)
+    >>> foo(1, 5, 2)
     4
 
 Et voilà, nous avons économisé une ligne de code.
@@ -162,7 +162,7 @@ La fonction ``__init__`` prend donc comme premier argument ``self``, suivi de to
 .. code-block:: py
 
     class pizza:
-        def __init__(self, parts,diamètre,nom):
+        def __init__(self, parts, diamètre, nom):
             self.parts = parts
             self.diam = diamètre
             self.nom = nom
@@ -180,7 +180,7 @@ Maintenant, créons une méthode ``mange_part``, sans argument, qui mange une pa
 .. code-block:: py
 
     class pizza:
-        def __init__(self, parts,diamètre,nom):
+        def __init__(self, parts, diamètre, nom):
             self.parts = parts
             self.diam = diamètre
             self.nom = nom
