@@ -2,7 +2,7 @@ Introduction à la programmation
 ===============================
 
 Qu'est-ce qu'un langage de programmation ?
------------------------------------------
+------------------------------------------
 
 Je pense qu'il faut commencer par se poser une autre question, encore plus importante et fondamentale : qu'est-ce que la programmation ?
 

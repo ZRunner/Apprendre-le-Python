@@ -1,5 +1,6 @@
 .vscode
 build
+env/
 source/_build
 source/_static
 .DS_Store
